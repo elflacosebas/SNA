@@ -12,3 +12,4 @@ Es decir, lo que se crea con Gephi son las agrupaciones, yo he creado de 5 a 20,
 
 Lo que habría que hacer en R, es tomar los datos (columnas: source; target; n) y generar esos grupos.
 
+Creo que no voy a poderle mandar los shp para los mapas por que son del DANE y son muy pesados...
