@@ -10,6 +10,5 @@ Lo que se realiza en Gephi es el paso previo al análisis realizado con R que se
 
 Es decir, lo que se crea con Gephi son las agrupaciones, yo he creado de 5 a 20, ya que colombia tiene de base 5 regiones. 
 
-Lo que habría que hacer en R, es tomar los datos (columnas: source; target; n)
+Lo que habría que hacer en R, es tomar los datos (columnas: source; target; n) y generar esos grupos.
 
-Le mando el archivo por dropbox aunque no se cuanto pesa. 
