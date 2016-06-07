@@ -49,9 +49,35 @@ d <- col@data
 
 sort(col@data$NAME_2 [v$Label %in% col@data$NAME_2 == FALSE])
 sort(v$Label [col@data$NAME_2 %in% v$Label == F] )
-
-
-
-
-
 plot(col)
+
+################################  re mapit
+
+t <- membership(c)
+tt <- as.data.frame(as.matrix(t))
+tt$Municipality <- as.integer(row.names(tt))
+
+muni <- readShapePoly("MAGNA_2012_MPIO_OK.shp")
+depto <- readShapePoly("MAGNA_2012_DEPTO.shp")
+
+att <- as.data.frame.matrix(muni@data)
+att$MPIO_CCNCT <- as.integer(att$MPIO_CCNCT)
+
+attrib <- left_join(att, tt, by = c('MPIO_CCNCT' = 'Municipality'), copy=T)
+muni@data <- attrib
+
+write.table(attrib, file = 'grouping1.csv', sep = ',')
+str(attrib)
+attach(attrib)
+
+col<- brewer.pal(12,"Paired")
+palette(col)
+
+x11()
+plot(muni, col = (muni$V1), border = F, main = 'Mapa mediante SNA')
+plot(depto, add= T)
+box()
+
+
+
+
